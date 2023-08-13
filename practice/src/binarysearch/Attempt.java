@@ -28,3 +28,40 @@ public class Attempt{
          
         }
     }
+
+
+
+
+
+
+
+        int start=0;
+        int end = nums.length-1;
+        int check = (start+end)/2;
+        //start and end index
+        int x,y = 0;
+       
+        while( start <= end ){
+            if(target == nums[check]){
+                x = y = check ;
+                for(int z = check-1;z>=0;z--){
+                    if(nums[z]==target) x = z;
+                }
+                for(int z=check+1;z<nums.length;z++){               if(nums[z]==target) y=z;
+
+                }
+                return new int[] {x,y};
+            }else if(nums[check]>target){
+                end = check-1;
+                check = (start + end)/2;
+               continue;}
+            else {
+                start = check+1;
+                check = (start+end)/2;
+               
+            }
+                    
+            }
+            return new int[] {-1,-1};
+
+    }
