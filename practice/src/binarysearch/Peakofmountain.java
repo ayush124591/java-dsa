@@ -2,7 +2,7 @@ package binarysearch;
 
 public class Peakofmountain {
     public static void main(String[] args) {
-        int[] arr = {3,5};
+        int[] arr = {1,3};
         int start = 0;
         int end = arr.length-1;
         int mid = start+(end-start)/2;
