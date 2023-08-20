@@ -19,6 +19,8 @@ public class Bubblesort {
     //bubble 
     //return an array 
     //smallest left
+    //we have an boolean which basically breaks the loop 
+    //if no comparision was made in the previous comparisions
     public static int[] bubble(int[] nums){
         int length = nums.length;
         boolean changed ; 
@@ -32,12 +34,10 @@ public class Bubblesort {
                     int temp = nums[y];
                     nums[y] = nums[y+1];
                     nums[y+1] = temp;
-                    changed = true;
-                    
+                    changed = true;   
                 }
-                    ++counter;
             }
-           
+            if(!changed) break;
             System.out.println(Arrays.toString(nums));      
         }
 
