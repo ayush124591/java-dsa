@@ -8,7 +8,10 @@ public class floor_number{
         int check = (start+end)/2;
        
         while( start <= end ){
-          if(arr[check]>target){
+            if(target == arr[check]){
+                System.out.println(arr[check]);
+                break;
+            }else if(arr[check]>target){
                 end = check-1;
                 check = (start + end)/2;
                continue;}
