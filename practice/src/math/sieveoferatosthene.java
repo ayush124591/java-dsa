@@ -1,7 +1,7 @@
 package math;
 public class sieveoferatosthene{
     public static void main(String[] args) {
-        int n=50;
+        int n=5000;
         boolean[] primes = new boolean[n+1];
         sieve(n,primes);
     }
