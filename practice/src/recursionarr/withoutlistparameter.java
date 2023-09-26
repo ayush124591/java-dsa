@@ -1,34 +1,25 @@
 package recursionarr;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.ArrayList;
 
-public class withoutlistparameter {
-       public static void main(String[] args) {
-        int[] arr = {2};
-        System.out.println(arr.length);
-        System.out.println(finder(arr,2));      
-  }
-
-    public static ArrayList<Integer> finder(int[] arr, int targer){
-        return finderhelper(arr, targer, 0);
-    }
-
-    public static ArrayList<Integer> finderhelper(int[] arr, int target,int index ){
-
-        ArrayList<Integer> list = new ArrayList<>();
-        
-        if(index == arr.length){
-            return list ;
-        }
-        if(arr[index] == target){
-            list.add(index);
-        }
-
-        ArrayList<Integer> ans = finderhelper(arr,target,++index);
-        list.addAll(ans);
-        return list;
-
-    }
+class withoutlistparameter {
+    public static void main(String[] args) {
     
+        int[] arr = {1,2,2,1,4,5,2};
+        System.out.println(listnum(arr,2,0));
+        
+    }
+
+    public static ArrayList<Integer> listnum(int[] arr , int target , int index){
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        if(arr.length == index ) return list ;
+        if(arr[index] == target ) list.add(index);
+        
+        list.addAll(listnum(arr,target,++index));
+        return list ; 
+
+    }
+
 }
