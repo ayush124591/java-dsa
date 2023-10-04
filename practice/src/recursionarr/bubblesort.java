@@ -3,23 +3,37 @@ import java.util.Arrays;
 
 public class bubblesort {
 
-    public static void main(String[] args) {
-        int[] arr = {3,1,2};
-      
-        System.out.println(Arrays.toString(bubblesort(arr)));
+ // i is inner loop 
+ // j is outer loop 
+
+ public static void main(String[] args) {
+    int[] arr = {5,4,3,1,2,-1};
+    System.out.println(Arrays.toString(bubble(arr)));
+ }
+
+ static int[] bubble(int[] arr){
+    return helperbubble( arr,0,arr.length-2); //we will ++ the outer for comparision 
+ }
+
+ static int[] helperbubble(int[] arr,int i ,int j){
+
+    if (j<0) return arr;
+    if (i>j)  return helperbubble(arr, 0, --j);
+
+    if(arr[i]>arr[i+1]) {
+        int temp = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = temp ;
     }
 
-    static int[] bubblesort(int[] arr){
-        for (int i = arr.length-2 ; i >=0 ; --i) {
-            for (int j = 0; j <= i; ++j) {
-                if(arr[j]>arr[j+1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;                }
-                
-            }
-        }
-        return arr;
-    }
+    return helperbubble(arr, ++i, j);
+    
+
+
+    
+
+
+ }
     
 }
+ 
