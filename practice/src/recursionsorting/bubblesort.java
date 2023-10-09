@@ -1,4 +1,4 @@
-package recursionarr;
+package recursionsorting;
 import java.util.Arrays;
 
 public class bubblesort {
