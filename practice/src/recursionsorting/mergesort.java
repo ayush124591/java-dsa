@@ -1,6 +1,12 @@
 package recursionsorting;
 import java.util.Arrays;
 public class mergesort {
+
+
+    //note that the original array is not modified 
+    //it is still the same 
+    //bcoz we are creating copies of it in the called funciton 
+    
     public static void main(String[] args) {
         int[] arr = {8,3,4,1,2,-3,10,45};
         System.out.println(Arrays.toString(mergesort(arr)));
