@@ -9,17 +9,32 @@ class quicksort{
     }
 
     public static void quicksort(int[] arr){
-       quicksorthelp(arr,0,arr.length,arr.length-1);
+       quicksorthelp(arr,0,arr.length);
        return ;
     }
 
-    public static void quicksorthelp(int[] arr, int low , int high , int pivotindex ){
-        if(high-low == 1) return ;
-        int pivot = arr[pivotindex];
+    public static void quicksorthelp(int[] arr, int low , int high){
+        if(high-low < 2) return ;
+        int pivot = arr[high-1];
         int temp =0 ;
-        
-        //loop thorugh the whole array and keep track of i 
-        
+        int track = low;
+
+        //loop thorugh the whole array and keep track of i
+
+        for (int i = low; i < high ; i++) {
+            
+            if(arr[i]<pivot){
+                
+                temp = arr[i];
+                arr[i] = arr[track ];
+                arr[track] = temp ;
+                ++track;
+            }
+            
+        }
+
+        quicksorthelp(arr, low, track);
+        quicksorthelp(arr, track, high);
 
     }
 
